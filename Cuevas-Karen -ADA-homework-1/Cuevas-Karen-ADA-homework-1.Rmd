@@ -1,0 +1,68 @@
+---
+title: "Karen Cuevas ADA homework 1"
+author: "Karen Cuevas"
+date: "2/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Challenge 1
+```{r}
+library(stringr)
+print(vector_quote <- c("There is grandeur in this view of life, with its several powers, having been originally breathed by the Creator into a few forms or into one; and that, whilst this planet has gone circling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being evolved."))
+print(split_quote <- str_split(vector_quote, " ", n= Inf, simplify=TRUE))
+print(every_fourth <- split_quote[seq(from=1, to=60, by=4)])
+print(sort(every_fourth, decreasing = TRUE))
+```
+
+# Challenge 2
+```{r}
+odd_ints <- seq(from=1, to=159, by=2)
+m1 <- matrix (odd_ints , byrow=FALSE, nrow=8)
+m1 [5, 2]
+m2 <- m1 [3:6 , 4:9]
+class (m2)
+mean (m2)
+```
+
+# Challenge 3
+```{r}
+a <- array(data = 400:1, dim = c(5, 5, 4,4))
+a [1,1,1,2]
+a [2,3,2,]
+a [1:5, 1:5,3,3]
+```
+
+# Challenge 4
+```{r}
+Family <- list('Family: Lorisidae', 'Family: Galagidae', 'Family: Cheirogaleidae', 'Family: Lepilemuridae', 'Family: Indriidae', 
+            'Family: Lemuridae', 'Family: Daubentoniidae', 'Family: Tarsiidae', 'Family: Cebidae', 
+            'Family: Atelidae', 'Family: Pitheciidae', 'Family: Hylobatidae', 'Family: Hominidae', 'Family: Cercopithecidae')
+
+Superfamily <- list('Superfamily: Lorisoidea', 'Superfamily: Lemuroidea', 'Superfamily: Tarsioidea', 'Superfamily: Ceboidea', 
+                 'Superfamily: Hominoidea', 'Superfamily: Cercopithecoidea')
+
+Parvorder <- list('Parvorder: Platyrrhini', 'Parvorder: Catarrhini')
+
+Infraorder <- list('Infraorder: Lorisiformes', 'Infraorder: Lemuriformes', 'Infraorder: Tarsiiformes', 'Infraorder: Simiiformes')
+
+Suborder <- list('Suborder: Strepsirhini', 'Suborder: Haplorhini')
+
+Order <- list('Order: Primates')
+
+print(phylogeny <-list(Order, Suborder[[1]], Infraorder[[1]],                 Superfamily[[1]], Family[c(1,2)], 
+                                       Infraorder[[2]],                 Superfamily[[2]], Family[c(3,4,5,6,7)],
+                        Suborder[[2]], Infraorder[[3]],                 Superfamily[[3]], Family [[8]],
+                                       Infraorder[[4]], Parvorder[[1]], Superfamily[[4]], Family [c(9,10,11)],
+                                                        Parvorder[[2]], Superfamily[[5]], Family [c(12,13)],
+                                                                        Superfamily[[6]], Family [[14]]))
+print(nwm <- list(Parvorder[[2]], Superfamily[[5]], Family [c(12,13)],
+         Superfamily[[6]], Family [[14]]))
+
+
+print(Family[[8]]) ##The $ function is the same as [[]] and the same as x[[""]]
+
+```
